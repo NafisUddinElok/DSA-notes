@@ -37,18 +37,25 @@ int main() {
     fast_io;
 
     // tree
-    int nodes; cin >> nodes;
+    // int nodes; cin >> nodes;
     int m; cin >> m;
     // even though for tree : m = nodes - 1; its okay if we calculate like this
 
+    vi nodes;
     
     for(int i =0; i<m; i++){
         int u, v;
         cin >> u >> v;
+        
+        nodes.push_back(u);
+        nodes.push_back(v);
 
         adj[u].push_back(v);
         adj[v].push_back(u);
     }
+
+    sort(nodes.begin(), nodes.end());
+    nodes.erase(unique(nodes.begin(), nodes.end()), nodes.end());
 
     
 
@@ -57,7 +64,15 @@ int main() {
 
     dfs(root, -1);
 
-
+    cout << "Node  Parent  Depth  Subtree\n";
+    for(int i=0; i < nodes.size(); i++){
+        int u = nodes[i];
+        cout << u << "       "
+            << parent[u] << "       "
+            << depth[u] << "        "
+            << subtree[u] << endl;
+    }
+    
 
     return 0;
 }
