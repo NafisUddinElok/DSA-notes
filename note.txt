@@ -1,0 +1,18 @@
+ double pi = acos(-1);
+ fixed << setprecision(n)
+ scientific << setprecision(n)
+ setw(n)
+ setfill('integervalue')
+ left, right
+
+ *
+ zeller's congruence : ( date to weekday conversion algrothm)
+ -> h = (q + 13(m + 1)/5 + k + k / 4 + j / 4 + 5 j ) mod 7
+ -> k = year % 100
+ -> j = year / 100
+ -> h = 0(saturday) , 1(sunday), 2(monday), 3(tuesday), 4(wednesday), 5(thursday), 6(friday)
+
+ '"'
+ "''"
+ "``"
+ __builtin_popcount(n) -> counts number of 1's in number
